@@ -1,10 +1,17 @@
+import Form from "./Form.jsx"
+import { useState } from "react"
+
 export default function App() {
+
+  const [weather, setWeather] = useState();
+
+
   return (
     <>
-      <div className="w-1/2 h-24 bg-green-800 flex justify-center items-center mt-10 m-auto rounded-lg shadow">
-        <h1 className="text-5xl m-4 italic text-orange-500 flex justify-center items-center">Hello</h1>
-      </div>
+      <Form />
+      <h1
+        className="text-3xl m-auto text-center bold"
+      >{!weather ? "Search city" : null}</h1>
     </>
-
   )
 }
