@@ -4,9 +4,13 @@ import { useState } from "react"
 export default function App() {
 
   const [city, setCity] = useState("");
+  const api = import.meta.env.WEATHER_API;
 
   function handleRequest() {
-    fetch
+    fetch(`https://api.openweathermap.org/data/4.0/onecall/current?lat={lat}&lon={lon}&appid=${api}`)
+      .then(res => res.json())
+      .then(data => console.log(data))
+
 
   }
 
