@@ -1,10 +1,12 @@
-export default function Form() {
+export default function Form({ setCity }) {
+
     return (
         <form action="" className="flex justify-center items-center gap-3 p-6">
             <input
                 type="text"
                 name=""
                 id=""
+                onChange={(e) => setCity(e.target.value)}
                 className="p-3 bg-white rounded-4xl shadow flex-1"
             />
             <button

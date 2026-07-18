@@ -3,15 +3,22 @@ import { useState } from "react"
 
 export default function App() {
 
-  const [weather, setWeather] = useState();
+  const [city, setCity] = useState("");
+
+  function handleRequest() {
+    fetch
+
+  }
 
 
   return (
     <>
-      <Form />
+      <Form
+        setCity={setCity}
+      />
       <h1
         className="text-3xl m-auto text-center bold"
-      >{!weather ? "Search city" : null}</h1>
+      >{!city ? "Search city" : city}</h1>
     </>
   )
 }
