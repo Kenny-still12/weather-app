@@ -1,7 +1,11 @@
-export default function Form({ setCity }) {
+export default function Form({ setCity, handleRequest }) {
 
     return (
-        <form action="" className="flex justify-center items-center gap-3 p-6">
+        <form
+            action=""
+            className="flex justify-center items-center gap-3 p-6"
+            onSubmit={(e) => handleRequest(e)}
+        >
             <input
                 type="text"
                 name=""
