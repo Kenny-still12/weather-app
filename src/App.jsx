@@ -1,10 +1,12 @@
 import Form from "./Form.jsx"
+import Result from "./Result.jsx"
 import { useState } from "react"
 
 export default function App() {
 
   const [city, setCity] = useState("");
   const [measure, setMeasure] = useState("metric")
+  const [weatherResult, setWeatherResult] = useState(null)
   const api = import.meta.env.VITE_WEATHER_API;
 
 
@@ -24,6 +26,7 @@ export default function App() {
       const weatherRes = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${measure}&appid=${api}`)
       const weatherData = await weatherRes.json();
       console.log(weatherData)
+      setWeatherResult(weatherData)
 
     } catch (err) {
       console.error(err)
@@ -36,9 +39,11 @@ export default function App() {
         setCity={setCity}
         handleRequest={handleRequest}
       />
-      <h1
-        className="text-3xl m-auto text-center bold"
-      >{!city ? "Search city" : city}</h1>
+      <Result
+        weatherResult={weatherResult}
+        city={city}
+        weatherResult={weatherResult}
+      />
     </>
   )
 }
