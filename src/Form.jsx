@@ -11,11 +11,11 @@ export default function Form({ setCity, handleRequest }) {
                 name=""
                 id=""
                 onChange={(e) => setCity(e.target.value)}
-                className="p-3 bg-white rounded-4xl shadow flex-1"
+                className="p-3 bg-white rounded-lg shadow flex-1"
             />
             <button
                 type="submit"
-                className="p-3 bg-sky-500 rounded-full shadow text-xl text-center text-white bold"
+                className="p-3 bg-sky-500 rounded-lg shadow text-xl text-center text-white bold"
             >search</button>
         </form>
 
