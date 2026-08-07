@@ -7,14 +7,22 @@ export default function App() {
 
   const [city, setCity] = useState("");
   const [measure, setMeasure] = useState("metric")
-  const [weatherResult, setWeatherResult] = useState(null)
+  const [weatherResult, setWeatherResult] = useState({
+    data: null,
+    loading: false,
+    error: null
+  })
 
   async function handleRequest(e) {
     e.preventDefault();
 
     try {
-      const data = await weatherApi(city, measure);
-      setWeatherResult(data)
+      const data = await weatherApi(city, measure, { setWeatherResult });
+      setWeatherResult({
+        data: data,
+        loading: false,
+        error: null
+      })
     } catch (err) {
       console.error(err)
     }

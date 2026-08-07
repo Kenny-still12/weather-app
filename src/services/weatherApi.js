@@ -1,7 +1,12 @@
 const api = import.meta.env.VITE_WEATHER_API;
 
-export default async function weatherApi(city, measure) {
+export default async function weatherApi(city, measure, { setWeatherResult }) {
 
+    setWeatherResult({
+        data: null,
+        loading: true,
+        error: null,
+    })
     console.log("it is running")
     const geoRes = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${api}`)
     const geoData = await geoRes.json();
