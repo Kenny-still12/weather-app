@@ -1,5 +1,6 @@
 import Form from "./Form.jsx"
 import Result from "./Result.jsx"
+import SearchBar from "./Components/SearchBar.jsx";
 import weatherApi from "./services/weatherApi.js";
 import { useState } from "react"
 
@@ -30,7 +31,7 @@ export default function App() {
 
   return (
     <>
-      <Form
+      <SearchBar
         setCity={setCity}
         handleRequest={handleRequest}
       />
