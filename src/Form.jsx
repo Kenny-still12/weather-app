@@ -7,8 +7,7 @@ export default function Form({ setCity, handleRequest }) {
         >
             <input
                 type="text"
-                name=""
-                id=""
+                placeholder="search City"
                 onChange={(e) => setCity(e.target.value)}
                 className="p-3 bg-white rounded-lg shadow flex-1"
             />

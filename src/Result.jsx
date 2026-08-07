@@ -19,9 +19,10 @@ export default function Result({ weatherResult, city }) {
                     </div >
                     :
                     <div className="flex flex-col gap-6 items-center">
-                        <h1 className="text-center text-5xl text-gray-100">{city}</h1>
+                        <h1 className="text-center text-5xl text-gray-100">{weatherResult.data.name}, {weatherResult.data.sys?.country}</h1>
                         <img src={logo} alt="" className="w-25" />
                         <h2 className="text-center text-6xl text-gray-100">{weatherResult.data.main?.temp} °C</h2>
+                        <p className="text-center text-xl text-gray-300">Feels like {weatherResult.data.main?.feels_like} °C</p>
                     </div>
                 }
             </div >
