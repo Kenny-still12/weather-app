@@ -18,12 +18,19 @@ export default function App() {
 
     try {
       const data = await weatherApi(city, measure, { setWeatherResult });
+
       setWeatherResult({
         data: data,
         loading: false,
         error: null
       })
+
     } catch (err) {
+      setWeatherResult({
+        data: data,
+        loading: false,
+        error: err
+      })
       console.error(err)
     }
   }
