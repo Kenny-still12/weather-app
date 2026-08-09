@@ -1,4 +1,5 @@
 export default function WeatherCard({ weatherResult }) {
+
     const data = weatherResult.data;
 
     return (

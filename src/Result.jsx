@@ -1,16 +1,19 @@
 import logo from "./assets/meteorology.png"
 import WeatherCard from "./Components/WeatherCard"
+import Loading from "./Components/Loading.jsx"
 export default function Result({ weatherResult, city }) {
+    const weatherData = weatherResult.data;
+
     return (
         <>
             <div className="w-11/12 bg-linear-to-b from-blue-300 to-blue-700 m-auto rounded-md p-12">
-                {!weatherResult.data ?
+                {!weatherData ?
                     <div className="flex flex-col justify-center items-center gap-12" >
                         <h1 className="text-center text-4xl text-gray-100">{
-                            !weatherResult.data
-                                ? weatherResult.loading ? "loading..."
+                            !weatherData
+                                ? weatherResult.loading ? <Loading />
                                     : "Nothing to show here..."
-                                : weatherResult.data.name
+                                : weatherData.name
                         }</h1 >
                         <img
                             src={logo}
