@@ -6,7 +6,7 @@ export default function Result({ weatherResult, city }) {
 
     return (
         <>
-            <div className="w-11/12 bg-linear-to-b from-blue-300 to-blue-700 m-auto rounded-md p-12">
+            <div className="w-8/10 bg-linear-to-b from-blue-300 to-blue-700 m-auto rounded-md p-12">
                 {!weatherData ?
                     <div className="flex flex-col justify-center items-center gap-12" >
                         <h1 className="text-center text-4xl text-gray-100">{
