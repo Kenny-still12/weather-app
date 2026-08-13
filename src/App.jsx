@@ -6,6 +6,8 @@ import { useState } from "react"
 
 export default function App() {
 
+  // <a href="https://www.flaticon.com/free-icons/weather" title="weather icons">Weather icons created by iconixar - Flaticon</a> for attribute 
+
   const [city, setCity] = useState("");
   const [measure, setMeasure] = useState("metric")
   const [weatherResult, setWeatherResult] = useState({
