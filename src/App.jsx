@@ -19,6 +19,17 @@ export default function App() {
   async function handleRequest(e) {
     e.preventDefault();
 
+    if (!city.trim()) {
+      setWeatherResult({
+        data: null,
+        loading: false,
+        error: "Please enter a city"
+      });
+
+      return;
+
+    }
+
     setWeatherResult({
       data: null,
       loading: true,
@@ -38,7 +49,7 @@ export default function App() {
       setWeatherResult({
         data: null,
         loading: false,
-        error: err
+        error: err.message
       })
       console.error(err)
     }
