@@ -19,8 +19,14 @@ export default function App() {
   async function handleRequest(e) {
     e.preventDefault();
 
+    setWeatherResult({
+      data: null,
+      loading: true,
+      error: null
+    })
+
     try {
-      const data = await weatherApi(city, measure, { setWeatherResult });
+      const data = await weatherApi(city, measure,);
 
       setWeatherResult({
         data: data,
@@ -30,7 +36,7 @@ export default function App() {
 
     } catch (err) {
       setWeatherResult({
-        data: data,
+        data: null,
         loading: false,
         error: err
       })
