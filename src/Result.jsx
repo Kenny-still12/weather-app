@@ -8,7 +8,7 @@ export default function Result({ weatherResult, city }) {
 
     return (
         <>
-            <div className="w-10/12 bg-linear-to-b from-blue-300 to-blue-700 m-auto rounded-md p-12">
+            <div className="w-10/12 bg-linear-to-b from-blue-500 to-blue-800 m-auto rounded-md py-8 px-4">
                 {!weatherData ?
                     <div className="flex flex-col justify-center items-center gap-12" >
                         <h1 className="text-center text-4xl text-gray-100">{
