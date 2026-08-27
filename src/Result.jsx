@@ -2,6 +2,7 @@ import logo from "./assets/meteorology.png"
 import WeatherCard from "./Components/WeatherCard"
 import Loading from "./Components/Loading.jsx"
 import weatherMapper from "./utils/weatherMapper.js";
+import AdditionalInfo from "./Components/AdditionalInfo.jsx";
 export default function Result({ weatherResult, city }) {
     const weatherData = weatherResult.data;
     const weatherIcons = weatherMapper;
@@ -24,9 +25,15 @@ export default function Result({ weatherResult, city }) {
                         />
                     </div >
                     :
-                    <WeatherCard
-                        weatherResult={weatherResult}
-                    />
+                    <>
+                        <WeatherCard
+                            weatherResult={weatherResult}
+                        />
+
+                        <AdditionalInfo
+                            weatherResult={weatherResult}
+                        />
+                    </>
                 }
             </div >
 
