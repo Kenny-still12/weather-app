@@ -58,16 +58,20 @@ export default function App() {
 
   return (
     <>
-      <Header />
-      <SearchBar
-        setCity={setCity}
-        handleRequest={handleRequest}
-      />
-      <Result
-        weatherResult={weatherResult}
-        city={city}
-      />
-      <Footer />
+      <div className="flex flex-col justify-between gap-2 h-screen">
+        <div>
+          <Header />
+          <SearchBar
+            setCity={setCity}
+            handleRequest={handleRequest}
+          />
+          <Result
+            weatherResult={weatherResult}
+            city={city}
+          />
+        </div>
+        <Footer />
+      </div>
     </>
   )
 }
