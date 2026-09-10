@@ -11,7 +11,7 @@ export default function LiveClock() {
     }, [])
 
     return (
-        <p>{currentTime}</p>
+        <p className="font-mono font-semibold text-xl">{currentTime}</p>
     )
 
 

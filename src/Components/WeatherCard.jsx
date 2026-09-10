@@ -6,7 +6,7 @@ export default function WeatherCard({ weatherResult }) {
     const weatherIcons = weatherMapper;
 
     return (
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-center">
             <h1 className="text-4xl text-gray-100 mb-2">{data.name}</h1>
             <h2 className="text-3xl text-gray-200 mb-3">{data.sys?.country}</h2>
             <img src={weatherIcons[condition] || `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="" className="w-40" />

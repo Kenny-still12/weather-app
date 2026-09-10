@@ -1,8 +1,8 @@
-import logo from "./assets/meteorology.png"
-import WeatherCard from "./Components/WeatherCard"
-import Loading from "./Components/Loading.jsx"
-import weatherMapper from "./utils/weatherMapper.js";
-import AdditionalInfo from "./Components/AdditionalInfo.jsx";
+import logo from "../assets/meteorology.png"
+import WeatherCard from "./WeatherCard.jsx"
+import Loading from "./Loading.jsx"
+import weatherMapper from "../utils/weatherMapper.js";
+import AdditionalInfo from "./AdditionalInfo.jsx";
 export default function Result({ weatherResult, city }) {
     const weatherData = weatherResult.data;
     const weatherIcons = weatherMapper;
