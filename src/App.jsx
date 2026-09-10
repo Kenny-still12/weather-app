@@ -1,3 +1,4 @@
+import Footer from "./Components/Footer.jsx";
 import Header from "./Components/Header.jsx";
 import Result from "./Components/Result.jsx";
 import SearchBar from "./Components/SearchBar.jsx";
@@ -66,6 +67,7 @@ export default function App() {
         weatherResult={weatherResult}
         city={city}
       />
+      <Footer />
     </>
   )
 }
