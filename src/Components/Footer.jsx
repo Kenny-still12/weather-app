@@ -18,12 +18,12 @@ export default function Footer() {
                             <ul className="flex gap-x-6  gap-y-2 flex-wrap text-sm">
                                 <li className="hover:bg-slate-100 rounded-md p-2 transition font-semibold "> <a href="">About</a></li>
                                 <li className="hover:bg-slate-100 rounded-md p-2 transition font-semibold "><a href="">Contact </a></li>
-                                <li className="hover:bg-slate-100 rounded-md p-2 transition font-semibold "><a href="">Source </a></li>
+                                <li className="hover:bg-slate-100 rounded-md p-2 transition font-semibold "><a href="https://github.com/Kenny-still12/weather-app">Source </a></li>
                             </ul>
                         </nav>
                         <div className="flex gap-2">
                             <a
-                                href=""
+                                href="https://github.com/Kenny-still12"
                                 className="text-black hover:text-green-700 transition-colors" >
                                 <GithubIcon
                                     className="w-6 h-6"
@@ -31,7 +31,7 @@ export default function Footer() {
 
                             </a>
                             <a
-                                href=""
+                                href="https://www.linkedin.com/in/kenneth-sonoda-010187365/"
                                 className="text-black hover:text-green-700 transition-colors"
                             >
                                 <LinkedinIcon
