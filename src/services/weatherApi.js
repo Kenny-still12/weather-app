@@ -1,36 +1,40 @@
 const api = import.meta.env.VITE_WEATHER_API;
 
-export default async function weatherApi(city, measure) {
+export async function SearchCity(city) {
 
     console.log("it is running")
     try {
-        const geoRes = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${api}`)
+        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${api}`)
 
 
-        if (!geoRes.ok) {
+        if (!response.ok) {
             throw new Error("failed to search for city")
         }
 
-        const geoData = await geoRes.json();
+        const data = await response.json();
 
-        if (geoData.length === 0) {
+        if (data.length === 0) {
             throw new Error("City not found")
-        }
-
-        const { lat, lon } = geoData[0];
-
-        const weatherRes = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${measure}&appid=${api}`)
-
-        if (!weatherRes.ok) {
-            throw new Error("Failure to fetch weather data")
-        }
-
-        const weatherData = await weatherRes.json();
-        console.log(weatherData);
-        return weatherData;
+        };
+        console.log(data)
+        return data;
 
     } catch (err) {
         throw err
     }
+
+}
+
+export async function getWeatherByGeoLocation(lat, lon, measure) {
+    try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${measure}&appid=${api}`)
+
+        if (!response.ok) throw new Error("Failure to fetch weather data");
+
+        return response.json();
+    } catch (err) {
+        throw err
+    }
+
 
 }

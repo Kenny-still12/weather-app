@@ -2,7 +2,7 @@ import Footer from "./Components/Footer.jsx";
 import Header from "./Components/Header.jsx";
 import Result from "./Components/Result.jsx";
 import SearchBar from "./Components/SearchBar.jsx";
-import weatherApi from "./services/weatherApi.js";
+import { getWeatherByGeoLocation } from "./services/weatherApi.js";
 import { useState } from "react"
 
 export default function App() {
@@ -17,42 +17,52 @@ export default function App() {
     error: null
   })
 
-  async function handleRequest(e) {
-    e.preventDefault();
+  // async function handleRequest(e) {
+  //   e.preventDefault();
 
-    if (!city.trim()) {
-      setWeatherResult({
-        data: null,
-        loading: false,
-        error: "Please enter a city"
-      });
+  //   if (!city.trim()) {
+  //     setWeatherResult({
+  //       data: null,
+  //       loading: false,
+  //       error: "Please enter a city"
+  //     });
 
-      return;
+  //     return;
 
-    }
+  //   }
 
-    setWeatherResult({
-      data: null,
-      loading: true,
-      error: null
-    })
+  //   setWeatherResult({
+  //     data: null,
+  //     loading: true,
+  //     error: null
+  //   })
 
+  //   try {
+  //     const data = await weatherApi(city, measure,);
+
+  //     setWeatherResult({
+  //       data: data,
+  //       loading: false,
+  //       error: null
+  //     })
+
+  //   } catch (err) {
+  //     setWeatherResult({
+  //       data: null,
+  //       loading: false,
+  //       error: err.message
+  //     })
+  //     console.error(err)
+  //   }
+  // }
+
+  async function handleSelectCity(cityObj) {
+    setWeatherResult({ data: null, loading: true, error: null });
     try {
-      const data = await weatherApi(city, measure,);
-
-      setWeatherResult({
-        data: data,
-        loading: false,
-        error: null
-      })
-
+      const data = await getWeatherByGeoLocation(cityObj.lat, cityObj.lon, measure);
+      setWeatherResult({ data: data, loading: false, error: null });
     } catch (err) {
-      setWeatherResult({
-        data: null,
-        loading: false,
-        error: err.message
-      })
-      console.error(err)
+      setWeatherResult({ data: data, loading: false, error: err.message })
     }
   }
 
@@ -63,7 +73,8 @@ export default function App() {
           <Header />
           <SearchBar
             setCity={setCity}
-            handleRequest={handleRequest}
+            //handleRequest={handleRequest}
+            onSelectCity={handleSelectCity}
           />
           <Result
             weatherResult={weatherResult}
