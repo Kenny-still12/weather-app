@@ -17,44 +17,6 @@ export default function App() {
     error: null
   })
 
-  // async function handleRequest(e) {
-  //   e.preventDefault();
-
-  //   if (!city.trim()) {
-  //     setWeatherResult({
-  //       data: null,
-  //       loading: false,
-  //       error: "Please enter a city"
-  //     });
-
-  //     return;
-
-  //   }
-
-  //   setWeatherResult({
-  //     data: null,
-  //     loading: true,
-  //     error: null
-  //   })
-
-  //   try {
-  //     const data = await weatherApi(city, measure,);
-
-  //     setWeatherResult({
-  //       data: data,
-  //       loading: false,
-  //       error: null
-  //     })
-
-  //   } catch (err) {
-  //     setWeatherResult({
-  //       data: null,
-  //       loading: false,
-  //       error: err.message
-  //     })
-  //     console.error(err)
-  //   }
-  // }
 
   async function handleSelectCity(cityObj) {
     setWeatherResult({ data: null, loading: true, error: null });
@@ -73,7 +35,6 @@ export default function App() {
           <Header />
           <SearchBar
             setCity={setCity}
-            //handleRequest={handleRequest}
             onSelectCity={handleSelectCity}
           />
           <Result
