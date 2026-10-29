@@ -108,4 +108,4 @@ Weather icons by [iconixar on Flaticon](https://www.flaticon.com/free-icons/weat
 
 ## License
 
-No license specified yet — consider adding one (e.g. MIT) if you plan to share or open this project up for contributions.
+No license specified
