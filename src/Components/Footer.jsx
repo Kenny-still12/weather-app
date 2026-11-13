@@ -16,8 +16,8 @@ export default function Footer() {
 
                         <nav >
                             <ul className="flex gap-x-6  gap-y-2 flex-wrap text-sm">
-                                <li className="hover:bg-slate-100 rounded-md p-2 transition font-semibold "> <a href="">About</a></li>
-                                <li className="hover:bg-slate-100 rounded-md p-2 transition font-semibold "><a href="">Contact </a></li>
+                                <li className="hover:bg-slate-100 rounded-md p-2 transition font-semibold "> <a href="https://kennys-portfolio-alpha.vercel.app/#about">About</a></li>
+                                <li className="hover:bg-slate-100 rounded-md p-2 transition font-semibold "><a href="https://kennys-portfolio-alpha.vercel.app/#contact">Contact </a></li>
                                 <li className="hover:bg-slate-100 rounded-md p-2 transition font-semibold "><a href="https://github.com/Kenny-still12/weather-app">Source </a></li>
                             </ul>
                         </nav>
