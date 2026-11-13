@@ -31,7 +31,7 @@ export default function App() {
   return (
     <>
       <div className="flex flex-col justify-between gap-2 h-screen">
-        <div>
+        <div className="mb-30">
           <Header />
           <SearchBar
             setCity={setCity}
