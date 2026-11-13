@@ -24,7 +24,7 @@ export default function App() {
       const data = await getWeatherByGeoLocation(cityObj.lat, cityObj.lon, measure);
       setWeatherResult({ data: data, loading: false, error: null });
     } catch (err) {
-      setWeatherResult({ data: data, loading: false, error: err.message })
+      setWeatherResult({ data: null, loading: false, error: err.message })
     }
   }
 
